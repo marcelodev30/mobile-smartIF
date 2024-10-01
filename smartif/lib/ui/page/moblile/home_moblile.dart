@@ -10,8 +10,10 @@ class HomeMobile extends StatefulWidget {
 class _HomeMobileState extends State<HomeMobile> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      drawer: const Drawer(),
+      appBar: AppBar(),
+      body: const Center(
         child: Text('Tela moblile'),
       ),
     );

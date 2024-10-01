@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smartif/ui/shared/app.img.dart';
 
 class HomeWeb extends StatefulWidget {
   const HomeWeb({super.key});
@@ -10,10 +11,21 @@ class HomeWeb extends StatefulWidget {
 class _HomeWebState extends State<HomeWeb> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Web porra'),
-      ),
-    );
+    return Scaffold(
+        body: Row(
+      children: [
+        Expanded(
+          flex: 1,
+          child: Container(decoration: const BoxDecoration(color: Colors.blue)),
+        ),
+        Expanded(
+            flex: 4,
+            child: Container(
+              child: CircleAvatar(
+                child: Image.asset(AppImg.getIconLogo),
+              ),
+            )),
+      ],
+    ));
   }
 }
