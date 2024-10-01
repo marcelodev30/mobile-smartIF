@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ui/page/home.page.dart';
+import 'ui/page/page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -8,8 +8,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Smart IF',
-      home: HomePage(),
+      home: PageHome(),
     );
   }
 }
