@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smartif/ui/shared/app.img.dart';
+import 'package:smartif/app/config/app_img.dart';
+
 
 class HomeWeb extends StatefulWidget {
   const HomeWeb({super.key});
