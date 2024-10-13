@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smartif/app/app.dart';
+import 'package:smartif/app.dart';
 
 
 void main() {

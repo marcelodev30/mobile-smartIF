@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smartif/app/config/app_img.dart';
+import 'package:smartif/config/app_img.dart';
 
 
 class HomeWeb extends StatefulWidget {

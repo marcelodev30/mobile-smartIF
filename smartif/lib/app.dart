@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
-import '../ui/page/page.dart';
+import 'package:smartif/config/app_string.dart';
+import 'package:smartif/ui/page/login/login_page.dart';
+//import 'ui/page/page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,9 +10,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Smart IF',
+      title: AppString.titleApp,
       theme: ThemeData(),
-      home: const PageHome(),
+      home: Login(),
     );
   }
 }

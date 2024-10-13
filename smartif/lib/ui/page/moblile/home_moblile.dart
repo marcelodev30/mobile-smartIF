@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smartif/config/app_string.dart';
 import 'package:smartif/ui/components/card_dispositivo.dart';
 
 class HomeMobile extends StatefulWidget {
@@ -14,7 +15,7 @@ class _HomeMobileState extends State<HomeMobile> {
     return Scaffold(
       drawer: const Drawer(),
       appBar: AppBar(
-        title: const Text('Smart IF'),
+        title: Text(AppString.titleApp),
       ),
       body: const Center(
         child: Column(
