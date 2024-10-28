@@ -10,6 +10,11 @@ class SessionTokenLogin {
     accessToken = json['access'];
     rereshToken = json['refresh'];
   }
+  static SessionTokenLogin fromString(String jsonString) {
+    return SessionTokenLogin(
+        accessToken: json.decode(jsonString)['access'],
+        rereshToken: json.decode(jsonString)['refresh']);
+  }
 
   Map<String, dynamic> toJson() => {
         'access': accessToken,
