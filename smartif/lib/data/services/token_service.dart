@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smartif/data/models/sessoin_token_models.dart';
-import 'package:smartif/interface/locastorage_interface.dart';
+import 'package:smartif/data/interface/locastorage_interface.dart';
 
 class LocalStorageSessoin extends LocalStorage {
   final String _keydatabase = 'mykeytoken';

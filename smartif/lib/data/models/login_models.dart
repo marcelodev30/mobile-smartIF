@@ -1,12 +1,19 @@
 class LoginModels {
-  late String login;
-  late String senha;
-  LoginModels({required this.login, required this.senha});
+  late String _login;
+  late String _senha;
+
+  LoginModels({required String login, required String senha})
+      : _senha = senha,
+        _login = login;
+
+  String get getLogin => _login;
+  String get getSenha => _senha;
+  void setLogin(String value) => _login = value;
+  void setSenha(String value) => _senha = value;
 
   LoginModels.fromJson(Map<String, dynamic> json) {
-    login = json['username'];
-    senha = json['password'];
+    _login = json['username'];
+    _senha = json['password'];
   }
-
-  Map<String, dynamic> toJson() => {'username': login, 'password': senha};
+  Map<String, dynamic> toJson() => {'username': _login, 'password': _senha};
 }

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:smartif/data/models/login_models.dart';
 import 'package:smartif/data/models/sessoin_token_models.dart';
-import 'package:smartif/interface/login_interface.dart';
+import 'package:smartif/data/interface/login_interface.dart';
 
 class LoginRepository extends LoginInterface {
   @override
