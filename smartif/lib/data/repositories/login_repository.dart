@@ -9,7 +9,7 @@ class LoginRepository extends LoginInterface {
   Future<SessionTokenLogin> login(LoginModels loginModels) async {
     final dio = Dio();
     dio.options.baseUrl = AppString.baseUrl;
-    final reponse = await dio.get('/login/', data: loginModels.toJson());
+    final reponse = await dio.post('/login/', data: loginModels.toJson());
     if (reponse.statusCode == 200) {
       return SessionTokenLogin.fromJson(reponse.data);
     } else {
