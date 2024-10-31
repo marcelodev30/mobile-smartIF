@@ -13,8 +13,9 @@ class DioApp {
   }
 
   DioApp() {
-    getdados();
+    //getdados();
     _dio.options.baseUrl = AppString.baseUrl;
-    _dio.options.headers["authorization"] = "Bearer $token";
+    _dio.options.headers["authorization"] =
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwMzkwMTc4LCJpYXQiOjE3MzAzNjEzNzgsImp0aSI6IjJlMjQyZmI2ZWM3NzQ1YzViNzYyMWQ5MDcxMGIyODZjIiwidXNlcl9pZCI6Mn0.THWkaR5ObXKKjRfORSMGFErbuNC5NnUmptj7vk_H-DM";
   }
 }

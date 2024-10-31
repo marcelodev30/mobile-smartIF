@@ -12,9 +12,10 @@ class LoginController extends ChangeNotifier {
   Future<void> login(LoginModels credentials) async {
     isloading = true;
     try {
-      final token = await LoginRepository().login(credentials);
-      await LocalStorageSessoin().save(token);
+      var token = await LoginRepository().login(credentials);
       this.token = token;
+      await LocalStorageSessoin().save(token);
+      notifyListeners();
     } catch (e) {
       error = e.toString();
     } finally {

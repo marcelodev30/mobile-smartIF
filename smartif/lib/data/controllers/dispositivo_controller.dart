@@ -5,7 +5,7 @@ import 'package:smartif/data/repositories/dispositivos_repository.dart';
 
 class DispositivoController extends ChangeNotifier {
   bool isloading = false;
-  List<DispositivosModels> dispositivosModels = <DispositivosModels>[];
+  late List<DispositivosModels> dispositivosModels;
   String? error;
   final DispositivosRepository repository = DispositivosRepository();
 

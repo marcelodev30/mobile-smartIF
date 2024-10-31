@@ -7,7 +7,7 @@ import 'package:smartif/data/repositories/instance/dio_app.dart';
 class DispositivosRepository extends DispositivoInterface {
   @override
   Future<List<DispositivosModels>> fetchAll() async {
-    final response = await DioApp().dio.get('Dispositivos');
+    final response = await DioApp().dio.get('/Dispositivos');
     if (response.statusCode == 200) {
       return (response.data as List)
           .map((dispositivo) => DispositivosModels.fromJson(dispositivo))

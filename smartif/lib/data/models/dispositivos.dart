@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class DispositivosModels {
   int? id;
   TipoId? tipoId;
@@ -28,6 +30,9 @@ class DispositivosModels {
     }
     return data;
   }
+
+  @override
+  String toString() => json.encode(toJson());
 }
 
 class TipoId {
