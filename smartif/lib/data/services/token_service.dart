@@ -25,4 +25,10 @@ class LocalStorageSessoin extends LocalStorage {
     final SharedPreferences database = await SharedPreferences.getInstance();
     await database.setString(_keydatabase, sessoin.toString());
   }
+
+  @override
+  Future<String> getToken() async {
+    SessionTokenLogin? instance = await get();
+    return instance!.accessToken;
+  }
 }

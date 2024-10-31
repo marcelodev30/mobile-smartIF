@@ -4,4 +4,5 @@ abstract class LocalStorage {
   Future<void> save(SessionTokenLogin sessoin);
   Future<SessionTokenLogin?> get();
   Future<void> delete();
+  Future<String> getToken();
 }
