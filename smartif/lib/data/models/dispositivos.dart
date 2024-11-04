@@ -14,7 +14,7 @@ class DispositivosModels {
       required this.minTemperatura,
       required this.maxTemperatura});
 
-  factory DispositivosModels.vazio() => DispositivosModels(
+  factory DispositivosModels.isEmpty() => DispositivosModels(
       id: '',
       nome: '',
       nomeSala: '',
