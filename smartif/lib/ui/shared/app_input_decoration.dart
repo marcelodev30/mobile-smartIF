@@ -4,6 +4,7 @@ import '../../config/app_size.dart';
 
 class AppInputDecoration {
   static get defaultApplogin => InputDecoration(
+      labelStyle: const TextStyle(color: Colors.black),
       hintText: 'Digite sua Matricula..',
       prefixIcon: Icon(
         Icons.person,

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:smartif/data/models/dispositivo_comando.dart';
 import 'package:smartif/data/models/dispositivos.dart';
 import 'package:smartif/data/repositories/dispositivos_repository.dart';
 
 class DispositivoController extends ChangeNotifier {
-  bool isloading = false;
+  bool isloading = true;
   late List<DispositivosModels> dispositivosModels;
   String? error;
   final DispositivosRepository repository = DispositivosRepository();
@@ -21,14 +20,15 @@ class DispositivoController extends ChangeNotifier {
     }
   }
 
-  Future<void> sedComando(DispositivoComando comando) async {
+  Future<void> sedComando(String id) async {
     isloading = true;
     try {
-      await repository.sedComando(comando);
+      await repository.sedComando(id);
+      await fetchAll();
     } catch (e) {
       error = e.toString();
     } finally {
-      isloading = true;
+      isloading = false;
       notifyListeners();
     }
   }

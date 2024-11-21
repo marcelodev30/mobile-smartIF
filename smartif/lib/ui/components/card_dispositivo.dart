@@ -4,7 +4,8 @@ import 'package:smartif/data/models/dispositivos.dart';
 
 class CardDispositivo extends StatelessWidget {
   final DispositivosModels models;
-  const CardDispositivo({super.key, required this.models});
+  final void Function()? onPressed;
+  const CardDispositivo({super.key, required this.models, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,9 @@ class CardDispositivo extends StatelessWidget {
             leading: Image.asset(AppImg.getIconLogo, height: 40, width: 44),
             title: Text('${models.nome} ${models.nomeSala}'),
             subtitle: Text(models.status ? 'Ligador' : 'Desativado'),
-            trailing: const Icon(Icons.power)),
+            trailing: TextButton(
+                onPressed: onPressed,
+                child: const Icon(Icons.power_settings_new))),
       )),
     );
   }

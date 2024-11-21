@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:smartif/data/controllers/login_controller.dart';
+import 'package:smartif/data/models/login_models.dart';
 import 'package:smartif/ui/components/text_label.dart';
 import 'package:smartif/ui/page/login/design.page.dart';
 import 'package:smartif/ui/page/page.dart';
@@ -14,6 +16,13 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  LoginModels loginodels = LoginModels.isEmpty();
+  LoginController controller = LoginController();
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return DesignInUpPage(
@@ -32,11 +41,15 @@ class _LoginState extends State<Login> {
                 TextFormField(
                   keyboardType: TextInputType.number,
                   decoration: AppInputDecoration.defaultApplogin,
+                  onChanged: (value) => loginodels.setLogin(value),
                 ),
                 const SizedBox(height: 15),
                 const TextLebel(title: 'Senha'),
                 TextFormField(
+                  style: const TextStyle(color: Colors.black),
                   decoration: AppInputDecoration.senha,
+                  obscureText: true,
+                  onChanged: (value) => loginodels.setSenha(value),
                 ),
                 Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -57,8 +70,10 @@ class _LoginState extends State<Login> {
                       width: 150,
                       height: 42,
                       child: TextButton(
-                          onPressed: () {
+                          onPressed: () async {
+                            await controller.login(loginodels);
                             Navigator.push(
+                                // ignore: use_build_context_synchronously
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => const PageHome()));

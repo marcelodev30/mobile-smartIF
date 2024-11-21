@@ -1,8 +1,8 @@
 class DispositivoComando {
-  late int _id;
+  late String _id;
   late String _comando;
 
-  DispositivoComando({required int id, required String comando})
+  DispositivoComando({required String id, required String comando})
       : _id = id,
         _comando = comando;
 

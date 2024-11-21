@@ -6,6 +6,8 @@ class LoginModels {
       : _senha = senha,
         _login = login;
 
+  factory LoginModels.isEmpty() => LoginModels(login: '', senha: '');
+
   String get getLogin => _login;
   String get getSenha => _senha;
   void setLogin(String value) => _login = value;
