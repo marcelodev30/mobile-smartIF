@@ -14,7 +14,7 @@ class DioApp {
   }
 
   DioApp() {
-    getdados();
+    //getdados();
     _dio.options.baseUrl = AppString.baseUrl;
     _dio.options.headers["authorization"] = "Bearer $token";
   }

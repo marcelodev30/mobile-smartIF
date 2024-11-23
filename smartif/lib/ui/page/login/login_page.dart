@@ -8,14 +8,14 @@ import 'package:smartif/ui/shared/app_input_decoration.dart';
 import 'package:smartif/ui/shared/app_text_style.dart';
 import '../../../config/app_size.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginPageState extends State<LoginPage> {
   LoginModels loginodels = LoginModels.isEmpty();
   LoginController controller = LoginController();
   @override

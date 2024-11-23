@@ -9,7 +9,7 @@ void main() async {
   //await a.fetchAll();
   LoginController a = LoginController();
   await a.login(LoginModels(login: 'marcelo', senha: 'ash'));
-  print(a.token!.accessToken);
+  debugPrint(a.token!.accessToken);
 }
 
 
