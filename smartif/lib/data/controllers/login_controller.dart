@@ -8,13 +8,13 @@ class LoginController extends ChangeNotifier {
   bool isloading = false;
   SessionTokenLogin? token;
   late String error;
+  LocalStorageSessoin localStorageSessoin = LocalStorageSessoin();
 
   Future<void> login(LoginModels credentials) async {
     isloading = true;
     try {
-      var token = await LoginRepository().login(credentials);
-      this.token = token;
-      await LocalStorageSessoin().save(token);
+      token = await LoginRepository().login(credentials);
+      await localStorageSessoin.save(token!);
       notifyListeners();
     } catch (e) {
       error = e.toString();
@@ -25,11 +25,11 @@ class LoginController extends ChangeNotifier {
   }
 
   Future<void> logout() async {
-    await LocalStorageSessoin().delete();
+    await localStorageSessoin.delete();
   }
 
   Future<void> checkSessionLogin() async {
-    final token = await LocalStorageSessoin().get();
+    final token = await localStorageSessoin.get();
     if (token != null) {
       this.token = token;
       notifyListeners();
