@@ -32,4 +32,8 @@ class DispositivoController extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+
+
+  
 }

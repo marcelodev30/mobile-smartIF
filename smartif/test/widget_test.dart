@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:smartif/data/controllers/dispositivo_controller.dart';
 import 'package:smartif/data/controllers/login_controller.dart';
 import 'package:smartif/data/models/login_models.dart';
 
