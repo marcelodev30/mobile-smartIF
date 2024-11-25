@@ -3,6 +3,8 @@ import 'package:smartif/config/app_string.dart';
 import 'package:smartif/data/controllers/dispositivo_controller.dart';
 import 'package:smartif/ui/components/card_dispositivo.dart';
 
+import '../menu/menu.dart';
+
 class HomeMobile extends StatefulWidget {
   const HomeMobile({super.key});
 
@@ -16,7 +18,7 @@ class _HomeMobileState extends State<HomeMobile> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 3), () {
       carregarDados();
     });
   }
@@ -28,7 +30,7 @@ class _HomeMobileState extends State<HomeMobile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(),
+      drawer: const Drawer(child: Menu()),
       appBar: AppBar(
         title: Text(AppString.titleApp),
       ),
@@ -37,23 +39,27 @@ class _HomeMobileState extends State<HomeMobile> {
           builder: (context, _) {
             return controllers.isloading
                 ? const Center(child: CircularProgressIndicator())
-                : Column(
-                    children: [
-                      Expanded(
-                        child: ListView.builder(
-                            itemCount: controllers.dispositivosModels.length,
-                            itemBuilder: (_, index) {
-                              return CardDispositivo(
-                                models: controllers.dispositivosModels[index],
-                                onPressed: () {
-                                  controllers.sedComando(
-                                      controllers.dispositivosModels[index].id);
-                                },
-                              );
-                            }),
-                      ),
-                    ],
-                  );
+                : controllers.dispositivosModels.isEmpty
+                    ? const Center(child: Text('Sem Dispositivo '))
+                    : Column(
+                        children: [
+                          Expanded(
+                            child: ListView.builder(
+                                itemCount:
+                                    controllers.dispositivosModels.length,
+                                itemBuilder: (_, index) {
+                                  return CardDispositivo(
+                                    models:
+                                        controllers.dispositivosModels[index],
+                                    onPressed: () {
+                                      controllers.sedComando(controllers
+                                          .dispositivosModels[index].id);
+                                    },
+                                  );
+                                }),
+                          ),
+                        ],
+                      );
           }),
     );
   }
