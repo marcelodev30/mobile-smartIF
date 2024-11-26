@@ -7,7 +7,7 @@ class DioApp {
   final _dio = Dio();
   Dio get dio => _dio;
   late String token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMxNDA4MTQ5LCJpYXQiOjE3MzEzNzkzNDksImp0aSI6IjFjMjBkYTBjNWY1MjQ2NDk4Y2E0NmJhNGYzNDRkYzBmIiwidXNlcl9pZCI6MX0.z8kABCvqrLYu8ROcomKHFtdBNXeEGmqv3j00y6MFJbM';
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyNTM2NzcwLCJpYXQiOjE3MzI1MDc5NzAsImp0aSI6ImNhOWUyMzI3OGEzYzQ3ZTVhYTFhYTI0MDI5NDA4MDdhIiwidXNlcl9pZCI6MX0.k0GsjBfC2h4svG37bagYAJxL4Dp795PwQhcQpwov9lI';
 
   getdados() async {
     token = await LocalStorageSessoin().getToken();
@@ -16,6 +16,6 @@ class DioApp {
   DioApp() {
     //getdados();
     _dio.options.baseUrl = AppString.baseUrl;
-    _dio.options.headers["authorization"] = "Bearer $token";
+    //_dio.options.headers["authorization"] = "Bearer $token";
   }
 }
