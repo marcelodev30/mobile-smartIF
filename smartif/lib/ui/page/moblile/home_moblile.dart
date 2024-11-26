@@ -18,11 +18,7 @@ class _HomeMobileState extends State<HomeMobile> {
   @override
   void initState() {
     super.initState();
-<<<<<<< HEAD
     Future.delayed(const Duration(seconds: 3), () {
-=======
-    Future.delayed(const Duration(seconds: 4), () {
->>>>>>> fd1dff1e149e842b8242d6e0691743e6f8375a48
       carregarDados();
     });
   }
