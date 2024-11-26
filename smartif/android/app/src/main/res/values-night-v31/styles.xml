@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<<<<<<< HEAD
     <!-- Theme applied to the Android Window while the process is starting when the OS's Dark Mode setting is off -->
+=======
+    <!-- Theme applied to the Android Window while the process is starting when the OS's Dark Mode setting is on -->
+>>>>>>> fd1dff1e149e842b8242d6e0691743e6f8375a48
     <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
         <item name="android:forceDarkAllowed">false</item>
         <item name="android:windowFullscreen">false</item>
