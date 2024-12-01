@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:smartif/ui/page/moblile/config_page.dart';
 import '../ui/page/login/login_page.dart';
 import '../ui/page/page.dart';
 
@@ -21,7 +22,11 @@ class RouterApp {
             color: Colors.blue,
           );
         },
-      )
+      ),
+      GoRoute(
+        path: '/config',
+        builder: (context, state) => const ConfigPage(),
+      ),
     ],
   );
 }

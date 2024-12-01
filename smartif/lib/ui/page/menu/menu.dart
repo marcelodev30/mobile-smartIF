@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -16,7 +17,7 @@ class Menu extends StatelessWidget {
         ListTile(
           title: const Text('Configuração'),
           trailing: const Icon(Icons.keyboard_arrow_right),
-          onTap: () {},
+          onTap: () => context.go('/config'),
         ),
         ListTile(
           title: const Text('Sair'),
