@@ -13,11 +13,7 @@
 		<key>CFBundleInfoDictionaryVersion</key>
 		<string>6.0</string>
 		<key>CFBundleName</key>
-<<<<<<< HEAD
-		<string>Smart IF</string>
-=======
 		<string>smartif</string>
->>>>>>> fd1dff1e149e842b8242d6e0691743e6f8375a48
 		<key>CFBundlePackageType</key>
 		<string>APPL</string>
 		<key>CFBundleShortVersionString</key>

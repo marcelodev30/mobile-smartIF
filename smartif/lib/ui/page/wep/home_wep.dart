@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smartif/config/app_img.dart';
 import 'package:smartif/ui/page/menu/menu.dart';
+
+import '../../../data/controllers/dispositivo_controller.dart';
+import '../../components/card_dispositivo.dart';
 
 class HomeWeb extends StatefulWidget {
   const HomeWeb({super.key});
@@ -10,6 +12,21 @@ class HomeWeb extends StatefulWidget {
 }
 
 class _HomeWebState extends State<HomeWeb> {
+  final DispositivoController dispositivoController = DispositivoController();
+
+  @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(const Duration(seconds: 3), () {
+      carregar();
+    });
+  }
+
+  void carregar() async {
+    await dispositivoController.fetchAll();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,11 +41,19 @@ class _HomeWebState extends State<HomeWeb> {
         ),
         Expanded(
             flex: 4,
-            child: Container(
-              child: CircleAvatar(
-                child: Image.asset(AppImg.getIconLogo),
-              ),
-            )),
+            child: ListenableBuilder(
+                listenable: dispositivoController,
+                builder: (context, _) {
+                  return ListView.builder(
+                      itemCount:
+                          dispositivoController.dispositivosModels.length,
+                      itemBuilder: (context, index) {
+                        return CardDispositivo(
+                          models:
+                              dispositivoController.dispositivosModels[index],
+                        );
+                      });
+                })),
       ],
     ));
   }
